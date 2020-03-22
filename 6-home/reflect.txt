@@ -1,0 +1,37 @@
+/*Name : Palak Chawla
+Section : SCC
+ID : 118834175
+WK6- At home
+email : pchawla5@myseneca.ca
+9 March 2019*/
+
+I learnt how to use the copy constructor and copy assignment operator in this workshop.
+With the practice of overload operator and default, parameterized constructor and destructor.
+
+The main issue in this workshop was to stop duplication of code and that was happening at every step.
+I tried to minimize the duplication at my best with the help of research online and notes of our course.
+One problem I had was how should I use the copy constructor in copy assignment operator as I could see it is using the
+same code of copy constructor and destructor.It took me lot of time to analyze that.
+
+1.	Why does the copy assignment operator check for self-assignment before doing anything else? If it doesn’t do this test, what could go wrong?
+Copy assignment operator check if we are not assigning an object to itself. If self assignment is a match, then there will be
+no assignment at all. If it doesnot do the test, then the memory will be released holding the data by deallocation statement in the steps.
+
+2.	What you must do in the copy constructor before calling the copy assignment operator? Explain why it is necessary.
+We must assign the phoneNumber(in this case) to nullptr in the copy constructor so that assignment operator does not deallocate the memory if called
+by the copy constructor.
+
+3.	Explain why the parameter of the copy constructor must be sent by-reference and not by-value (modify your code to send it by-value and explain the result).
+Because in pass-by-value we are copying the parameter in the function and that is calling copy constructor. So it will be calling itself again and again.
+It will result in infinite recursion.
+
+
+
+
+Quiz 6 Reflection :
+Q2: What is protected and how we use it?
+The keyword 'protected' limits access to the members of  a derived class.
+
+Q3: How can you inherit base class constructor?
+We can inherit base class constructor by this form:
+using Base::Base;

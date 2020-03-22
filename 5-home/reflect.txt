@@ -1,0 +1,53 @@
+﻿/*Name : Palak Chawla
+Section : SCC
+ID : 118834175
+WK5- At home
+email : pchawla5@myseneca.ca
+17 February 2019*/
+
+I learned the following concepts in this lab: 
+
+	•Operator overloading in C++ and overlaoding of different operator like +, +=, * , == , +=
+	•In += operator use of reference to store resultant in same variable
+	•removal of duplicate code and simplification using safeEmptySpace() and nonEmptyFraction() methods
+	•Implemantation of fraction numbers and logic behind calculation of GCD
+	•use of this operator to access current object and return value using *this
+	•learned about temporary object and their lifetime and their use in operator overloading
+
+I did the normal validation for each isEmpty or rhs.isEmpty but then I realized I am using it so many times.
+I can make a separate function like nonEmptyfunction to reuse it.
+
+1.	The operator+ returns a Fraction object. Explain why this operator should not return a reference to a Fraction object.
+>>      A reference is an alias for a variable or object, but in this + operator is used to add two fractions and store result in a new fraction, 
+	whereas += is used to add a fraction to other fraction and store result in same left hand side fraction, Hence refrence is used in that case.
+	 
+2.	List the temporary objects in the tester module.
+>>	As stated above + operator add two fraction and stores and return result in third temp fraction
+    	Line 52: (a + b).display();
+    	Line 56: (b + d).display();
+	Once the result is returned and values are displayed the temporary Fraction object gets destroyrd as execution passes these points.
+    
+3.	List the simplifications that you made to your class to minimize duplication.
+>>	To avoid code duplicacy and simplification, I made two methods
+	
+	void safeEmptySpace(); 
+	to initialize member variable to safe empty state as this code snippet  was getting repeated 
+	
+	bool nonEmptyFraction(const Fraction & rhs)const;
+	To check whether both fractions are nonEmpty before performing any operation on them, this snippet was getting repeated 
+	across each operator method.
+
+Quiz 5 Reflection :
+Deep copy and Shallow copy 
+Ans : Deep copy is copying the resource data and shallow copy is copying the instance variables only.
+	
+HOw do we prohibit copying and copy assigning of a class?
+Ans : We prohibit copying or copy assigning by declaring the copy consructor or copy assignment operator as deleted
+members of a class.
+
+Free helper functions?
+A free helper function can only access the public member functions of the class, not the private one.	
+	
+	
+	
+	
