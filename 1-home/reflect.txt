@@ -1,0 +1,29 @@
+/*Name : Palak Chawla
+Section : SCC
+ID : 118834175
+WK1- At-home
+email : pchawla5@myseneca.ca
+20 JAnuary 2019*/
+
+1. the purpose of namespaces and header files;
+Purpose of namespace is to differentiate between the similar identifiers. As multiple programmers working on same project,
+might use same or similar names so the namespace that they belong to,will differ them.
+Purpose of header files are to reduce the same code that is to be used in the main or source file.
+As we can declare the header file in each .cpp file so we can write some code/functions that is going to be used repeatedly and just 
+add it in .cpp file via including the header file.
+
+2. why header files should not be compiled;
+Header files should not be compiled because when compiler compiles the .cpp files,and in that
+ we have already included our header files in .cpp files as #include---.h file.
+
+3. why you should never include .cpp files in another file.
+We should never include our .cpp files because compiler is already compiling them once,
+if we include it in other files then it is going to be compiled multiple times.
+
+
+Quiz 1 Reflection
+
+What is the difference between signature and the prototype of a function?
+Functionn signature consists of the identifier, parameter types and the order of parameter types.
+Whereas prototype of a function consists of a function signature and the return type. Additionally,
+in prototype of function identifier is also optional.

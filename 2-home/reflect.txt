@@ -1,0 +1,36 @@
+/*Name : Palak Chawla
+Section : SCC
+ID : 118834175
+WK2- At home
+email : pchawla5@myseneca.ca
+27 January 2019*/
+
+
+
+1)	Why do you need to allocate new dynamic memory for the entire array when you increase
+ the size of an existing array of dynamically allocated memory? Why not allocate memory only for the new element?
+A: Because arrays are stored in consecutive way of memory and we dont know in case of appending new element in it, if the 
+next space is even empty or occupied.The only way we can increase its size is to allocate a new dynamic memory and copy the content
+from the previous one to the new one before deleting the old one.
+
+
+2)	The CellPhone structure stores the model of the cellphone in an array of characters.
+ At the end of the program, we do not use the delete operator to deallocate the memory occupied by the model. 
+Why don’t we need to use the delete operator on this array itself? Explain and compare with the array of cellphones.
+
+Because model array is a variable that is local to the structure and its storage will be automatically destroyed and it will go out of scope once
+ the function ends.But with the array of cellphone we allocated a dynamic memory, that we have to deallocate using the delete operator.
+
+
+3)	There are two display(...) function definitions.
+ How does the compiler know which definition to call from your main function?
+Compiler checks the declaration and matches the number of arguments and the type of arguments in the method signature.
+And call the appropriate function accordingly.
+
+
+
+Quiz 2 Reflection :
+
+What is the difference between a class and a struct?
+Struct is by default public and a class is private in nature.
+Struct does not support polymorphism and inheritance where as class does.
