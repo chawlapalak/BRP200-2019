@@ -1,0 +1,14 @@
+In line number 76 of your output:
+The output should be:
+   msg.operator<<(...): [Hello!]
+                         ^
+But your output is: 
+   msg.operator<<(...): []
+                         ^
+
+Unmatched character details:
+The character in column 26 is supposed to be:
+  [H] ASCII code(72)
+but you printed
+  []] ASCII code(93)
+

@@ -1,0 +1,65 @@
+/*Name : Palak Chawla
+Section : SCC
+ID : 118834175
+WK9- At home
+31 March 2019*/
+
+This workshop had lots of new things to learn like Templates and their advantages over function overloading.
+I learned how to implement the templates. I learned how to use different type of constrained cast.
+And coding the function templates in .h file not the .cpp file.
+
+1.	What happens if you try to put your template functions in Data.cpp? Does your source code compile if you move all functions to Data.h?
+No , the source code doesnot compile, it gives compile time error.Compiler cant check the function and the template at the same time,
+if we put our template functions in Data.cpp.
+
+2.	Move one template function into ws9_lab.cpp. Does it work now? Do you need to define the template function above main(), before it is used,
+ or can you define it below main()?
+It doesnot matter if we move it above main() or below main(), it doesnot work if we move the templated function.
+
+3.	Could you have done this lab without templates, by just overloading your functions in Data.h to accept integer and double arguments? What is the advantage of using templates? 
+Yes, for sure, We can overload the functions in Data.h to accept integer and double arguments.
+Advantages of a template are as following:
+* They are more safe to use as in type safety.
+* reduces redundancy
+* Cleaner code with the templates 
+* They are evaluated at the compile time
+
+4.	What is the difference between template<class T> and template<typename T>?
+There is not such difference between the both, as it makes the code which is written after it,
+a template class if template<class T> is mentioned or a template function if template<typename T> is mentioned
+
+5.	What have you learned doing this workshop?
+Lots of things, how to create a  function template and implement it.
+Along with that, I used various constrained cast also. Also, coding in .h file.
+
+Quiz 9 reflection :
+
+template<typename T, typename retType>
+retType Sum(const T* arr, int size)
+{
+	retType result = arr[0];
+	for(int i = 1 ; i < size; ++i)
+	{
+	result += arr[i];
+	}
+	return result;
+}
+
+Q1: If we call the function using Sum<Student, double>(...), what global/friend/member
+functions/operators(for class student) must exist so the code compiles and executes
+correclty? Provide their prototype(do not implement any of them)
+as we are adding arr[i] in result uing += operator this += opertor and also implementation of [] operator should be present in Student.
+
+
+
+
+Q2: What if the call is Sum<Student, Student>(...)? Provide their prototype(do not
+implement any of them)
+
+template <typename T>
+T sum (T a, T b);
+
+
+
+Q3: Explain why each one is needed.
+typename T is needed to let the compiler know the type/class of parameters and typename retType is needed to specify the returnType of parameter.

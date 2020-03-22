@@ -1,0 +1,75 @@
+/*Name : Palak Chawla
+Section : SCC
+ID : 118834175
+WK8- At home
+23 March 2019*/
+ 
+This lab was fun to do with lots of new things to learn like :
+making and using an abstract base class; using pure virtual functions ; and understanding the difference
+between a abstract base class and a concrete class; inheriting functions from base classes etc.
+
+This lab almost no logical error or big obstacle occured for me, I just kept following the steps and it all kept working.
+This lab helped a little bit more about interfaces and classes since it is in project work also. It will support my knowledge for the project for sure.
+
+
+
+1.	What is the difference between an abstract base class and a concrete class?
+An abstract base class have some or all declared functions as pure virtual functions and it cant be instantiated
+where as a concrete class can be instantiated and is completely implemented without any pure virtual function.
+
+2.	Take a look to the main module—how is it possible that this module can work with chequing and savings accounts but doesn’t know about the SavingsAccount or ChequingAccount classes?
+	This is due to Liskov substitution principle which states that using pointers and reference to base class a function can use derived class
+	object without knowing it and this main module is example of that principle, Here we are accessing Savings account and chequing account through pointer to
+	*iAccount which is base class without even knowing SavingsAccount and Chequing Account class.
+
+3.	Note that the interface has a destructor, even if doesn’t store any attributes. Why is that destructor necessary?
+interface is having destructor for memory management,Here in this workshop we are initializing Savings account and Chequing account through pointers to iAccount
+iAccount* Angelina[2];
+    
+	// initialize Angelina's Accounts
+	Angelina[0] = CreateAccount("Savings", 400.0); 
+	Angelina[1] = CreateAccount("Chequing", 400.0);
+
+Now if I use delete Angelina[0] Which destructor it is going to use, definatel not Savings Account destructor, it doesnot know about SavingsAccount destructor,
+so it is necessary to have a destructor in the interface.
+
+4.	In the context of a hierarchy of classes, what is the difference between overloading, overriding and shadowing?
+Overloading-is providing multiple definations of a function by changing its signature i.e. changing number of parameters, change datatype of parameters
+return type dont have any role. Overloading dont work for derived class in C++, compiler looks into the scope of either class only.
+
+	eg: int add(int a, intb)
+	    int add(int a, int b, int c)
+
+Overiding - It is redefination of a base class function in derived class with same signature, so return types and parameters are same.
+	eg: Class A{
+			public:
+				virtual void display(){cout<<"Class A display";}
+		   }
+
+	    Class B: public A{
+			public:
+				void display(){cout<<"Class B display";}
+		   }
+Shadowing - in C++ a member function of derived class can shadow the base class memeber fuction with same identifier, if a member function exists in derived class 
+compiler binds call to that member fuction.To call the shadowed base class version we use scope resolution operator.
+
+eg:   Class A{
+		public :
+			void display();
+ 	    }
+
+	Class B:public A{
+		public :
+			void display();
+ 	    }
+
+
+Quiz 8 reflection :
+Q1: Explain in what situation you should use dynamic cast
+Ans: We use dynamic cast when we have to convert within the inheritance hierarchy.
+
+
+
+Ques 3 : Explain the difference between early and late binding.
+Early binding is based on the object's static type and occurs at compile time.
+Late binding is based on the object's dynamic type and occurs at run time.
