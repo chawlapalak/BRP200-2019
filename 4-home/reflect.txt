@@ -1,0 +1,47 @@
+/*Name : Palak Chawla
+Section : SCC
+ID : 118834175
+WK4- At home
+email : pchawla5@myseneca.ca
+10 February 2019*/
+
+I learnt constructor overloading in this workshop along with reusability of code which is being used multiple times.
+How to use safe empty state and "this" function. I faced problem in comparing string data for canTravelWith(...) .
+And in code reusibility, then I figured out I could use the same safe empty space by just calling once only.
+
+
+1)	What is a safe empty state? Couldyoudefine another state as the safe empty state?
+ It is a well defined state to initialize the instance varaible of an object at the time of creation inside constructor.
+   One data member could be identified to hold a special value that identifies a safe empty state, it can be any value that
+   we choose but it is to be ensured that value is only used for safe empty state, we only need to check value of that data
+   member to determine whether object is in safe empty state or not.
+
+2)	Describe how you have minimizedcode duplication.
+ During implementation I was duplicating code while initializing safe empty state in all the constructor. So, inorder to
+   minimize duplication I seggregated the logic to initiliaze safe empty state in a seperate private function named safeEmpty()
+   and called that safeEmpty() function inside each constructor.
+
+
+3)	Explain why the canTravelWith(...) member function can access the pri-vate data of the object referenced in its parameter.
+ In C++ there is a phenomenon known as "Pass-by-refernce", which enables function and methods to modify private data members of 
+   object because once a reference varaible is initialized it act as a alias or another name for an already existing variable. So 
+   the reference name may be used to modify value of data members, in canTravelWith() we are passing reference of other object and
+   this reference is used to access private data members of that object.
+
+
+
+
+Quiz 4 Reflection :
+
+
+    In one or two sentences, explain what is the difference between a member function and a helper function.
+A helper function is a function which can access public memeber functions of a class, not the private functions.
+Member function can access the data of the object and make the changes too.	
+
+    Explain the purpose of the keyword explicit: where should be used and what does it do?
+To avoid impilicit conversion by compiler for  a single argumented constructor , we use "explicit" for that.
+
+    Explain the concept of constructor in C++. What is it? When it is used? What is its purpose?
+Constructor is a special member function of an object which is initialised at its creation time. Two types: Default and argumented constructor.
+
+
